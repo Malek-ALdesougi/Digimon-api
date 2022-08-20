@@ -1,5 +1,4 @@
-
-
+// ============================================= making the constructor
 function Digimon(Name, level, image) {
 
     this.Name = Name;
@@ -7,6 +6,7 @@ function Digimon(Name, level, image) {
     this.image = image;
 }
 
+// ====================================================== Fetching the APIs data
 
 fetch("https://digimon-api.herokuapp.com/api/digimon").then((result) => {
 
@@ -25,6 +25,8 @@ fetch("https://digimon-api.herokuapp.com/api/digimon").then((result) => {
 }
 )
 
+// ================================== Puting every JSON object inside an array
+
 function loopingArray(arr) {
 
     arr.map(newArr => {
@@ -38,6 +40,8 @@ function loopingArray(arr) {
         cardMaker(newArr);
 
     })
+
+// ================================================== Fucntion to make the card to the HTML page
 
     function cardMaker(digimons) {
 
@@ -63,9 +67,11 @@ function loopingArray(arr) {
         let p2 = document.createElement("p");
         p2.textContent = digimons.level;
         imagesDiv.appendChild(p2);
-
     }
 }
+
+
+// ===================== The end =============================
 
 
 
